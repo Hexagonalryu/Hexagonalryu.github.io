@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--favicon -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="apple-touch-icon" sizes="180x180" href="">
+        <link rel="icon" type="image/png" sizes="32x32" href="">
+        <link rel="icon" type="image/png" sizes="16x16" href="">
+        <link rel="manifest" href="">
+        <link rel="mask-icon" href="" color="#5bbad5">
+        <meta name="" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+      
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+      
+        <style>
+            body{
+                margin: 0;
+                font-family: 'RocknRoll One', sans-serif;
+            }  
+            #playBtn{
+                position: absolute;
+                width: 180px;
+                height: 100px;
+                font-family: 'RocknRoll One', sans-serif;
+                font-size: 40px;
+                bottom: 100px;
+                border-radius: 20px;
+                background-color: darkblue;
+                color: white;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            #instructions{
+                position:absolute;
+                bottom: 250px;
+                font-family: 'RocknRoll One', sans-serif;
+                font-size: 30px;
+                color: darkblue;
+                width: 300px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 20px;
+                padding: 30px;
+                background-color: rgba(255, 255, 255, 0.5);
+                text-align: center;
+            }
+            #gameover{
+                display: none;
+                position:absolute;
+                bottom: 250px;
+                font-family: 'RocknRoll One', sans-serif;
+                font-size: 50px;
+                color: darkblue;
+                width: 300px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 20px;
+                padding: 30px;
+                background-color: rgba(255, 255, 255, 0.5);
+                text-align: center;
+            }
+            #info{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                font-family: 'RocknRoll One', sans-serif;
+                font-size: 50px;
+            }
+
+            #space_ifr{
+                position:absolute;
+                bottom: 100px;
+                width: 80vw;
+                height: 80vh;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 10px;
+                padding: 30px;
+                background-color: rgba(255, 255, 255, 0.5);
+                text-align: center;
+            }
+            #closeBtn{
+                position:absolute;
+                bottom: 50px;
+                width: 5vw;
+                height:5vh;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 10px;
+                padding: 5px;
+                background-color: rgba(255, 0, 0, 0.5);
+                text-align: center;
+                color:white;
+
+            }
+        </style>
+      
+        <title> MSGP</title>
+      </head>
+      
+      <body >
+         
+       <div id="body" style="width: 100%; height: 100%;">
+        
+        <div id="arcade" style="display: none; visibility: hidden;">
+            <p id="instructions"  >Do You Want to Play !?</p>
+          <p id="gameover">Game over</p>
+          <button id="playBtn"  onclick="space_inv()" >PLAY</button>
+
+        </div>
+
+        <div id="arc_container" >
+            <iframe id="space_ifr"   > </iframe>
+            <button id="closeBtn"  onclick="cerrar_ifr()" >cerrar</button>
+        </div>
+      
+
+    </div> 
+    <script type="module">
+        import { Game } from './Game.js';
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const game = new Game(); 
+            window.game = game;
+        });
+
+    </script>
+
+<script src="eventos.js"></script>
+</body>
+
+</html>
