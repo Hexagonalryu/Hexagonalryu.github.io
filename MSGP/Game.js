@@ -243,6 +243,7 @@ class Game{
 			this.controller = new Controller(this);
 			//this.eventos = new Eventos(this);
 			this.renderer.setAnimationLoop( this.render.bind(this) );
+            this.loadingBar.visible = false;
 			
 		}
 		
